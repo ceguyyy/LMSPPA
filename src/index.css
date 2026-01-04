@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* PPA Corporate Colors */
+  --color-primary: #D32F2F;
+  /* Red */
+  --color-primary-dark: #B71C1C;
+  --color-bg-body: #F3F4F6;
+  /* Light Gray */
+  --color-surface: #FFFFFF;
+  --color-text-main: #1F2937;
+  --color-text-muted: #6B7280;
+}
+
+body {
+  background-color: var(--color-bg-body);
+  color: var(--color-text-main);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Custom scrollbar for playlist */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
