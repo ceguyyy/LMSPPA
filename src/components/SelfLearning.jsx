@@ -1,11 +1,12 @@
+'use client'
 import React, { useState, useEffect } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useRouter, useParams } from 'next/navigation'
 import { Search, Star, FileText, Download } from 'lucide-react'
 import CoursePlayer from './CoursePlayer'
 
 // --- Dashboard Component ---
 export function SelfLearningDashboard() {
-    const navigate = useNavigate()
+    const router = useRouter()
     const [courses, setCourses] = useState([])
 
     useEffect(() => {
@@ -55,7 +56,7 @@ export function SelfLearningDashboard() {
                                     </div>
                                 </div>
                                 <button
-                                    onClick={() => navigate('/self-learning/' + course.id)}
+                                    onClick={() => router.push('/self-learning/' + course.id)}
                                     className="w-full py-2 border border-gray-300 text-gray-700 font-bold text-xs rounded hover:bg-gray-50 transition-colors uppercase"
                                 >
                                     View Course
@@ -72,7 +73,7 @@ export function SelfLearningDashboard() {
 // --- Detail Component with Top Tabs ---
 export function SelfLearningCourseDetail() {
     const { id } = useParams()
-    const navigate = useNavigate()
+    const router = useRouter()
     const [course, setCourse] = useState(null)
     const [activeTab, setActiveTab] = useState(0) // Index of module
     const [previewFile, setPreviewFile] = useState(null)
